@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Plus, Search, CalendarCheck, Filter } from 'lucide-react';
+import { Plus, Search, CalendarCheck } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { getAttendance, getEmployees, markAttendance } from '../services/api';
 import { Loading, EmptyState, Modal, StatusBadge, Avatar, FormField } from '../components/UI';
@@ -17,7 +17,6 @@ export default function Attendance() {
   const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ employee_id: '', date: today(), status: 'Present' });
   const [formErrors, setFormErrors] = useState({});
-  const [activeTab, setActiveTab] = useState('list'); // list | mark
 
   const fetchAll = () => {
     setLoading(true);
@@ -30,6 +29,7 @@ export default function Attendance() {
       .finally(() => setLoading(false));
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { fetchAll(); }, [dateFilter]);
 
   const validate = () => {

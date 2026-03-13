@@ -1,4 +1,4 @@
-import { X, AlertTriangle, Loader2 } from 'lucide-react';
+import { X, AlertTriangle } from 'lucide-react';
 
 // ── Loading ──────────────────────────────────────────────────────────────────
 export function Loading({ message = 'Loading...' }) {

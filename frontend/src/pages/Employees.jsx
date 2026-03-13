@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Plus, Search, Trash2, Users } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { getEmployees, createEmployee, deleteEmployee } from '../services/api';
-import { Loading, EmptyState, Modal, ConfirmDialog, Avatar, StatusBadge, FormField } from '../components/UI';
+import { Loading, EmptyState, Modal, ConfirmDialog, Avatar, FormField } from '../components/UI';
 
 const DEPARTMENTS = [
   'Engineering', 'Product', 'Design', 'Marketing',
