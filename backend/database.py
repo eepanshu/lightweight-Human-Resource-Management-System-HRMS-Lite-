@@ -1,7 +1,7 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 
-MONGODB_URL = "mongodb+srv://deepanshubhadauriacsaiml21_db_user:CBEXYcBOvk3xUza1@cluster0.iiv5b8h.mongodb.net/?appName=Cluster0"
+MONGODB_URL = os.environ.get("MONGODB_URL", "mongodb://localhost:27017") # Fallback to local 
 
 client = AsyncIOMotorClient(MONGODB_URL)
 db = client.hrms_lite
